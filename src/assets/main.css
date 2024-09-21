@@ -1,0 +1,8 @@
+@import './base.scss';
+@import './element.scss';
+@import 'last-year-components/Ly-components.es.css';
+
+body {
+  background: url('@/assets/images/高清1.jpg') no-repeat center center;
+  background-size: cover;
+}

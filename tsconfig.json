@@ -1,0 +1,17 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    }
+  ],
+  "compilerOptions": {
+    "types": [
+      "vue-vine/macros"
+    ], // 确保已安装并添加了对 vite 的类型声明
+    // ...其他配置
+  }
+}

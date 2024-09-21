@@ -1,0 +1,50 @@
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.4) !important
+  }
+
+  ul {
+    margin-left: auto !important;
+  }
+
+  .logo {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  .toLogin {
+    font-size: 20px;
+    color: rgb(253, 238, 220);
+    margin: 0 20px;
+    cursor: pointer;
+
+    &:hover {
+      color: chocolate;
+    }
+  }
+}
+
+
+.logoIcon1 {
+  width: 30px;
+  height: 30px;
+  background: url("@/assets/images/logo1.png") no-repeat center;
+  background-size: 30px;
+}
+
+.logoIcon2 {
+  width: 42px;
+  height: 42px;
+  background: url("@/assets/images/logo2.png") no-repeat center;
+  background-size: 30px;
+}

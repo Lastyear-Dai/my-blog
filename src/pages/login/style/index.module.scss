@@ -1,0 +1,120 @@
+.login {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background: url('../../../assets/images/bgd.jpg') no-repeat center center;
+  background-size: cover;
+
+  .card {
+    width: 800px;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    background-color: transparent;
+    border-radius: 10px;
+
+    .enrollPage,
+    .loginPage {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      background-color: #ffffffe2;
+
+      transition: all 1s;
+      left: 0;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      position: absolute;
+
+      h1 {
+        font-weight: 400;
+        color: rgb(79, 79, 79);
+        margin-bottom: 60px;
+      }
+    }
+
+    .loginPage {
+
+      .revisePwd {
+
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        // 小手
+        cursor: pointer;
+
+        &:hover {
+
+          //下划线
+          text-decoration: underline;
+          //下划线的颜色
+          color: var(--el-color-primary);
+        }
+
+      }
+
+      .loginBtn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+
+    .enrollPage {
+      opacity: 0;
+
+    }
+
+    .prompt {
+      position: absolute;
+      transition: all 1s;
+      right: 0;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to right, var(--el-color-primary), #ff4141de);
+      opacity: 0.9;
+      padding: 160px 0;
+      color: rgb(255, 255, 255);
+
+      h1 {
+        font-weight: 400;
+      }
+
+      p {}
+
+    }
+
+  }
+
+  @media (max-width:800px) {
+
+    .card {
+      width: 400px;
+
+      .prompt {
+        display: none;
+      }
+
+      .enrollPage,
+      .loginPage {
+        width: 100%;
+      }
+    }
+  }
+}

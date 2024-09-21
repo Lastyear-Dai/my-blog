@@ -1,0 +1,35 @@
+.home {
+  padding-top: 1px;
+
+  .time {
+    margin-top: 100px;
+  }
+
+
+  .myInput {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .searchIcon {
+      transition: all 0.5s;
+      // 小手
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  .lyTypewriter {
+    position: absolute;
+    bottom: 30px;
+    color: bisque;
+    width: 100%;
+    padding: 0 10%;
+    text-align: center;
+  }
+
+}

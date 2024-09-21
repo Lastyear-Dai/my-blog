@@ -1,0 +1,28 @@
+/* 更改主题色*/
+:root {
+  --el-color-primary: #e53d53 !important;
+  --el-color-primary-light-3: #e87584 !important;
+  --el-menu-bg-color: rgba(255, 255, 255, 0) !important;
+  --el-menu-hover-bg-color: rgba(255, 255, 255, 0) !important;
+  --el-menu-text-color: #fff !important;
+}
+
+.el-menu {
+  display: flex;
+  justify-content: end;
+
+  border-bottom: none !important;
+  border-right: none !important;
+
+  li {
+    transition: border-bottom 1s;
+    font-size: 18px !important;
+
+ 
+  }
+
+  .is-active {
+    border-bottom: 4px solid var(--el-menu-active-color) !important;
+
+  }
+}
