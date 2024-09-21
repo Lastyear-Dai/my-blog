@@ -6,11 +6,7 @@ const router = createRouter({
       path: '/',
       redirect: '/home'
     },
-    // {
-    //   path: '/home',
-    //   name: 'abhomeout',
-    //   component: () => import('@/views/home/index.vue')
-    // },
+
     {
       path: '/login',
       name: 'login',
@@ -20,6 +16,11 @@ const router = createRouter({
       path: '/home',
       name: 'home',
       component: () => import('@/pages/home/index.vine')
+    },
+    {
+      path: '/blogList',
+      name: 'blogList',
+      component: () => import('@/pages/blogList/index.vine')
     }
   ]
 })

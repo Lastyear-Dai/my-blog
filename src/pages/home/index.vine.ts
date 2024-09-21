@@ -1,4 +1,3 @@
-import style from "./style/index.module.scss"
 // @ts-ignore
 import { LyTypewriter, LyTime } from 'last-year-components/index.js'
 import type { typewriterOptions, options } from 'last-year-components/index'
@@ -9,30 +8,31 @@ import { useBlurApp, useSearch } from '@/hook'
 import { onMounted, ref } from "vue"
 function Home() {
   vineStyle.scoped(scss`
+  @import url("./style/index.module.scss");
   // 给搜索框添加透明背景色
-      :deep(.el-input__wrapper) {
-        background-color: rgba(0, 0, 0, 0.223) !important;
-      }
-      // 搜索框添加过度效果
-      .InputItem{
-        transition: all 0.3s;
-      }
-      // 时间鼠标移入放大
-      :deep(.time)  {
-        transition: all 0.3s;
-        &:hover{
-          transform: scale(1.2);
-        }
-      }
+:deep(.el-input__wrapper) {
+  background-color: rgba(0, 0, 0, 0.223) !important;
+}
+// 搜索框添加过度效果
+.InputItem {
+  transition: all 0.3s;
+}
+// 时间鼠标移入放大
+:deep(.time) {
+  transition: all 0.3s;
+  &:hover {
+    transform: scale(1.2);
+  }
+}
   `)
   //打字机参数
   const LyTypewriteroptions: typewriterOptions = {
     el: '#lyTypewriter',
-    content: '欢迎来到我的博客...',
+    content: '',
     startSpeed: 50,
     endSpeed: 50,
     waitTime: 10000,
-    isWay: 'loop'
+    isWay: 'roundTrip'
   }
   //时间组件参数
   const LyTimeoptions: options = {
@@ -59,8 +59,16 @@ function Home() {
   const initDZJ = () => {
     //获取打字机文本内容初始化打字机
     getHitokoto().then(res => {
-      LyTypewriteroptions.content = res.pyq
+      LyTypewriteroptions.content = res
       const lyTypewriter = new LyTypewriter(LyTypewriteroptions)
+      lyTypewriter.on('character', (data: { status: boolean }) => {
+        if (data.status) {
+          getHitokoto().then(res => {
+            lyTypewriter.setContent(res)
+            lyTypewriter.typeCharacter()
+          })
+        }
+      })
       lyTypewriter.typeCharacter()
     })
   }
@@ -72,23 +80,22 @@ function Home() {
   onMounted(() => {
     initTime()
     initDZJ()
-
   })
   return vine`
-    <div :class="style.home">
+    <div class="home">
     
-        <div :class="style.time" id="time" />
-        <div :class="style.myInput">
+        <div class="time" id="time" />
+        <div class="myInput">
             <el-input class="InputItem" @keyup.enter="search" size="large" input-style="color:#fff;"  @focus="inputFocus(true)" @blur="inputFocus(false)" v-model="input" :style="'width:'+ inputWidth+'px'" :placeholder="placeholder" >
             <template #prefix>
                 <SvgIcomVine name="Bing" size="24" />
             </template>
             <template #suffix>
-            <SvgIcomVine :class="style.searchIcon" name="搜索" @click="search" size="24" />
+            <SvgIcomVine class="searchIcon" name="搜索" @click="search" size="24" />
                 </template>
             </el-input>
         </div>
-       <div id="lyTypewriter" :class="style.lyTypewriter"></div>
+       <div id="lyTypewriter" class="lyTypewriter"></div>
     </div>   
     `
 }

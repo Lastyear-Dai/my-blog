@@ -1,27 +1,23 @@
-import style from "./style/index.module.scss"
 import { ElMenu, ElMenuItem, ElSubMenu } from "element-plus"
-import SvgIcon from "@/components/SvgIcon.vine"
-import { RouterLink, useRouter } from 'vue-router'
+import { RouterLink, useRouter, useRoute } from 'vue-router'
 function Header() {
   vineStyle.scoped(scss`
-    @media (max-width: 650px){
-        .myMenu{
-          display: none;
-        }
-    }
+  @import url('./style/index.module.scss');
     `)
   const router = useRouter()
+  const route = useRoute()
+  console.log(route.fullPath)
   return vine`
-    <div :class="style.header">
-          <div :class="style.logo" @click="router.push('/')">
-              <span :class="style.logoIcon2"></span>
-              <span :class="style.logoIcon1"></span>
+    <div class="header">
+          <div class="logo" @click="router.push('/')">
+              <span class="logoIcon2"></span>
+              <span class="logoIcon1"></span>
           </div>
-          <ElMenu  :collapse="true" default-active="1" class="myMenu">
-              <ElMenuItem index="1">🏡首页</ElMenuItem>
-              <ElMenuItem index="2">🥝博客</ElMenuItem>
+          <ElMenu  router :default-active="route.fullPath"  :collapse="true"  class="myMenu">
+              <ElMenuItem index="/home">🏡起始页</ElMenuItem>
+              <ElMenuItem index="/blogList">🥝博客</ElMenuItem>
           </ElMenu>
-        <RouterLink to="/login" :class="style.toLogin" >登录</RouterLink>
+        <RouterLink to="/login" class="toLogin" >登录</RouterLink>
     </div>
     `
 }

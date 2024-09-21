@@ -12,8 +12,8 @@ importers:
         specifier: ^2.8.0
         version: 2.8.0(vue@3.4.29(typescript@5.4.2))
       last-year-components:
-        specifier: ^1.0.10
-        version: 1.0.10
+        specifier: ^1.0.11
+        version: 1.0.11
       pinia:
         specifier: ^2.1.7
         version: 2.1.7(typescript@5.4.2)(vue@3.4.29(typescript@5.4.2))
@@ -1170,8 +1170,8 @@ packages:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
     engines: {node: '>=0.10.0'}
 
-  last-year-components@1.0.10:
-    resolution: {integrity: sha512-1JF14vVTDNpQ2RdCCsgIln7x6k2eaj61t6JyWZe2tyw3jF1V2Wh8/uzQeJNyhCENDQtqsC9laBtu6J73/G69zA==}
+  last-year-components@1.0.11:
+    resolution: {integrity: sha512-O2XNto7Wur+02IIAxnA5vtKCZ+52iqt3E94ljHq62iasy5g0Hr/U6Nk06ojWfVCBENsuEccWe0WeN4hLnq6P8Q==}
 
   line-column@1.0.2:
     resolution: {integrity: sha512-Ktrjk5noGYlHsVnYWh62FLVs4hTb8A3e+vucNZMgPeAOITdshMSgv4cCZQeRDjm7+goqmo6+liZwTXo+U3sVww==}
@@ -2953,7 +2953,7 @@ snapshots:
 
   kind-of@6.0.3: {}
 
-  last-year-components@1.0.10: {}
+  last-year-components@1.0.11: {}
 
   line-column@1.0.2:
     dependencies:
